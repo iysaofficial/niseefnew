@@ -145,7 +145,7 @@ function IndonesiaOnline() {
   return (
     <>
       <Head>
-        <title>Indo Online | NISEEF</title>
+        <title>Indo Daring | NISEEF</title>
         <meta name="description" content="Halaman Registrasi NISEEF" />
       </Head>
       <Header />
@@ -255,7 +255,7 @@ function IndonesiaOnline() {
                   >
                     <option value="">--Pilih Kategori Kompetisi--</option>
                     <option value="National Innovative Science Environmental and Entrepreneur Fair - Online Competition">
-                      Online Competition
+                      Kompetisi Daring
                     </option>
                   </select>
                 </div>

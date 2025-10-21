@@ -50,6 +50,8 @@ function IndonesiaOffline() {
     switch (value) {
       case "National Innovative Science Environmental and Entrepreneur Fair - Offline Competition":
         break;
+      case "National Innovative Science Environmental and Entrepreneur Fair - Offline Competition + Fullpack":
+        break;
       default:
         break;
     }
@@ -142,7 +144,7 @@ function IndonesiaOffline() {
   return (
     <>
       <Head>
-        <title>Indo Offline | NISEEF</title>
+        <title>Indo Luring | NISEEF</title>
         <meta name="description" content="Halaman Registrasi NISEEF" />
       </Head>
       <Header />
@@ -251,7 +253,10 @@ function IndonesiaOffline() {
                   >
                     <option value="">--Pilih Kategori Kompetisi--</option>
                     <option value="National Innovative Science Environmental and Entrepreneur Fair - Offline Competition">
-                      Offline Competition
+                      Kompetisi Luring
+                    </option>
+                    <option value="National Innovative Science Environmental and Entrepreneur Fair - Offline Competition + Fullpack">
+                      Kompetisi Luring + Fullpack
                     </option>
                   </select>
                 </div>

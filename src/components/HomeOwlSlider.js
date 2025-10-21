@@ -85,7 +85,7 @@ const HomeOwlSlider = () => {
               </h2>
 
               <h2 className="text-white font-weight-400">
-                <a>Segera Hadir 2026</a>
+                <a>Buka Pendaftaran 2026</a>
                 <br />
               </h2>
 
@@ -95,11 +95,11 @@ const HomeOwlSlider = () => {
                 target="_blank"
                 className="site-button m-r10 white button-lg"
               >
-                After Movie
+                After Event
               </a>
 
               <Link
-                href="https://drive.google.com/file/d/1a8sTUM0plBNMsq8BkNGA00_MARh_r5Fi/view?usp=sharing"
+                href="https://drive.google.com/file/d/1eKYOd78oLRl1KePy2l_hcaWKtv7Ha0R6/view?usp=sharing"
                 legacyBehavior
               >
                 <a
@@ -110,12 +110,12 @@ const HomeOwlSlider = () => {
                   Buku Panduan
                 </a>
               </Link>
-              <Link href="/" legacyBehavior>
+              <Link href="/registration/homeindo" legacyBehavior>
                 <a
                   rel="noreferrer noopener"
                   className="site-button m-r10 white button-lg"
                 >
-                  Segera Hadir
+                  Daftar disini!
                 </a>
               </Link>
             </div>
@@ -135,7 +135,7 @@ const HomeOwlSlider = () => {
               </h2>
 
               <h2 className="text-white font-weight-400">
-                <a>Segera Hadir 2026</a>
+                <a>Buka Pendaftaran 2026</a>
                 <br />
               </h2>
 
@@ -145,11 +145,11 @@ const HomeOwlSlider = () => {
                 target="_blank"
                 className="site-button m-r10 white button-lg"
               >
-                After Movie
+                After Event
               </a>
 
               <Link
-                href="https://drive.google.com/file/d/1a8sTUM0plBNMsq8BkNGA00_MARh_r5Fi/view?usp=sharing"
+                href="https://drive.google.com/file/d/1eKYOd78oLRl1KePy2l_hcaWKtv7Ha0R6/view?usp=sharing"
                 legacyBehavior
               >
                 <a
@@ -160,12 +160,12 @@ const HomeOwlSlider = () => {
                   Buku Panduan
                 </a>
               </Link>
-              <Link href="/" legacyBehavior>
+              <Link href="/registration/homeindo" legacyBehavior>
                 <a
                   rel="noreferrer noopener"
                   className="site-button m-r10 white button-lg"
                 >
-                  Segera Hadir
+                  Daftar disini!
                 </a>
               </Link>
             </div>
@@ -185,7 +185,7 @@ const HomeOwlSlider = () => {
               </h2>
 
               <h2 className="text-white font-weight-400">
-                <a>Segera Hadir</a>
+                <a>Buka Pendaftaran 2026</a>
                 <br />
               </h2>
               <a
@@ -194,10 +194,10 @@ const HomeOwlSlider = () => {
                 target="_blank"
                 className="site-button m-r10 white button-lg"
               >
-                After Movie
+                After Event
               </a>
               <Link
-                href="https://drive.google.com/file/d/1a8sTUM0plBNMsq8BkNGA00_MARh_r5Fi/view?usp=sharing"
+                href="https://drive.google.com/file/d/1eKYOd78oLRl1KePy2l_hcaWKtv7Ha0R6/view?usp=sharing"
                 legacyBehavior
               >
                 <a
@@ -208,12 +208,12 @@ const HomeOwlSlider = () => {
                   Buku Panduan
                 </a>
               </Link>
-              <Link href="/" legacyBehavior>
+              <Link href="/registration/homeindo" legacyBehavior>
                 <a
                   rel="noreferrer noopener"
                   className="site-button m-r10 white button-lg"
                 >
-                  Segera Hadir
+                  Daftar disini!
                 </a>
               </Link>
             </div>

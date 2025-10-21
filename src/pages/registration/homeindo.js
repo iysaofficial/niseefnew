@@ -73,7 +73,7 @@ function HomeIndo() {
                 )
               }
             >
-              Kompetisi Online<i className="fa-solid fa-earth-americas"></i>
+              Kompetisi Daring <i className="fa-solid fa-earth-americas"></i>
             </a>
             <a
               className="btn btn-custom text-center me-lg-5 "
@@ -84,7 +84,7 @@ function HomeIndo() {
                 )
               }
             >
-              Kompetisi Offlinea<i className="fa-solid fa-earth-americas"></i>
+              Kompetisi Luring <i className="fa-solid fa-earth-americas"></i>
             </a>
           </div>
         </div>
