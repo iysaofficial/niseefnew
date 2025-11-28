@@ -50,8 +50,6 @@ function IndonesiaOffline() {
     switch (value) {
       case "National Innovative Science Environmental and Entrepreneur Fair - Offline Competition":
         break;
-      case "National Innovative Science Environmental and Entrepreneur Fair - Offline Competition + Fullpack":
-        break;
       default:
         break;
     }
@@ -66,7 +64,8 @@ function IndonesiaOffline() {
     }
   }, [router]);
 
-  const scriptURL = "https://script.google.com/macros/s/AKfycbx0kuGEsgULND-buwJmy1aCrz9swM1zkiycfyvVPRtsuP4T9hZ6glrOqI1attxwafn7zg/exec";
+  const scriptURL =
+    "https://script.google.com/macros/s/AKfycbx0kuGEsgULND-buwJmy1aCrz9swM1zkiycfyvVPRtsuP4T9hZ6glrOqI1attxwafn7zg/exec";
 
   useEffect(() => {
     const form = document.forms["regist-form"];
@@ -212,8 +211,8 @@ function IndonesiaOffline() {
                       {isLoading
                         ? "Mengirim..."
                         : canClick
-                          ? "Lanjutkan"
-                          : `Tunggu... ${countdown}`}
+                        ? "Lanjutkan"
+                        : `Tunggu... ${countdown}`}
                     </button>
                   </div>
                 </div>
@@ -254,9 +253,6 @@ function IndonesiaOffline() {
                     <option value="">--Pilih Kategori Kompetisi--</option>
                     <option value="National Innovative Science Environmental and Entrepreneur Fair - Offline Competition">
                       Kompetisi Luring
-                    </option>
-                    <option value="National Innovative Science Environmental and Entrepreneur Fair - Offline Competition + Fullpack">
-                      Kompetisi Luring + Fullpack
                     </option>
                   </select>
                 </div>
@@ -563,12 +559,20 @@ function IndonesiaOffline() {
                     <option value="">--Pilih Kategori--</option>
                     <option value="Entrepreneur">Entrepreneur</option>
                     <option value="Social Science">Social Science</option>
-                    <option value="Environment Science">Environment Science</option>
+                    <option value="Environment Science">
+                      Environment Science
+                    </option>
                     <option value="Inovation Science">Inovation Science</option>
-                    <option value="Industrial Application">Industrial Application</option>
-                    <option value="Informatics, Robotic and Artificial Intelegence (AI)">Informatics, Robotic and Artificial Intelegence (AI)</option>
+                    <option value="Industrial Application">
+                      Industrial Application
+                    </option>
+                    <option value="Informatics, Robotic and Artificial Intelegence (AI)">
+                      Informatics, Robotic and Artificial Intelegence (AI)
+                    </option>
                     <option value="Life Science">Life Science</option>
-                    <option value="Physics, Energy and Engineering">Physics, Energy and Engineering</option>
+                    <option value="Physics, Energy and Engineering">
+                      Physics, Energy and Engineering
+                    </option>
                   </select>
                 </div>
 
