@@ -69,6 +69,28 @@ function HomeIndo() {
               className="btn btn-custom text-center me-lg-5 "
               onClick={() =>
                 handleOpenModal(
+                  "/registration/homeindo"
+                )
+              }
+            >
+              TUTUP<i className="fa-solid fa-earth-americas"></i>
+            </a>
+            <a
+              className="btn btn-custom text-center me-lg-5 "
+              onClick={() =>
+                handleOpenModal(
+                  "/registration/homeindo"
+                )
+              }
+            >
+              TUTUP<i className="fa-solid fa-earth-americas"></i>
+            </a>
+          </div>
+          {/* <div className="link-web mx-auto text-center">
+            <a
+              className="btn btn-custom text-center me-lg-5 "
+              onClick={() =>
+                handleOpenModal(
                   "/registration/indo-online",
                   indonesiaOnlineTerms
                 )
@@ -87,7 +109,7 @@ function HomeIndo() {
             >
               Kompetisi Luring <i className="fa-solid fa-earth-americas"></i>
             </a>
-          </div>
+          </div> */}
         </div>
       </section>
 

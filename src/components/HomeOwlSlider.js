@@ -85,7 +85,7 @@ const HomeOwlSlider = () => {
               </h2>
 
               <h2 className="text-white font-weight-400">
-                <a>Buka Pendaftaran 2026</a>
+                <a>Tutup Pendaftaran 2026</a>
                 <br />
               </h2>
 
@@ -110,12 +110,12 @@ const HomeOwlSlider = () => {
                   Buku Panduan
                 </a>
               </Link>
-              <Link href="/registration/homeindo" legacyBehavior>
+              <Link href="" legacyBehavior>
                 <a
                   rel="noreferrer noopener"
                   className="site-button m-r10 white button-lg"
                 >
-                  Daftar disini!
+                  Tutup Pendaftaran
                 </a>
               </Link>
             </div>
@@ -135,7 +135,7 @@ const HomeOwlSlider = () => {
               </h2>
 
               <h2 className="text-white font-weight-400">
-                <a>Buka Pendaftaran 2026</a>
+                <a>Tutup Pendaftaran 2026</a>
                 <br />
               </h2>
 
@@ -160,12 +160,12 @@ const HomeOwlSlider = () => {
                   Buku Panduan
                 </a>
               </Link>
-              <Link href="/registration/homeindo" legacyBehavior>
+              <Link href="" legacyBehavior>
                 <a
                   rel="noreferrer noopener"
                   className="site-button m-r10 white button-lg"
                 >
-                  Daftar disini!
+                  Tutup Pendaftaran
                 </a>
               </Link>
             </div>
@@ -185,7 +185,7 @@ const HomeOwlSlider = () => {
               </h2>
 
               <h2 className="text-white font-weight-400">
-                <a>Buka Pendaftaran 2026</a>
+                <a>Tutup Pendaftaran 2026</a>
                 <br />
               </h2>
               <a
@@ -208,12 +208,12 @@ const HomeOwlSlider = () => {
                   Buku Panduan
                 </a>
               </Link>
-              <Link href="/registration/homeindo" legacyBehavior>
+              <Link href="" legacyBehavior>
                 <a
                   rel="noreferrer noopener"
                   className="site-button m-r10 white button-lg"
                 >
-                  Daftar disini!
+                  Tutup Pendaftaran
                 </a>
               </Link>
             </div>
