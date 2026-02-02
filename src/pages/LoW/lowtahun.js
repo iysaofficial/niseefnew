@@ -25,15 +25,24 @@ const lowtahun = () => {
             <h3>Pilih berdasarkan tahun event yang di ikuti </h3>
           </div>
           <div className=" wrapper-btn text-center">
-          <Link href="/LoW/2025/kategori" legacyBehavior>
-              <a
-                className="btn btn-primary site-button m-3"
-                style={{ fontSize: "22px", fontWeight: "bold" }}
-              >
-                {" "}
-                2025{" "}
-              </a>
-            </Link>
+            <Link href="/LoW/2026/kategori" legacyBehavior>
+                <a
+                  className="btn btn-primary site-button m-3"
+                  style={{ fontSize: "22px", fontWeight: "bold" }}
+                >
+                  {" "}
+                  2026{" "}
+                </a>
+              </Link>
+            <Link href="/LoW/2025/kategori" legacyBehavior>
+                <a
+                  className="btn btn-primary site-button m-3"
+                  style={{ fontSize: "22px", fontWeight: "bold" }}
+                >
+                  {" "}
+                  2025{" "}
+                </a>
+              </Link>
           </div>
         </div>
       </div>
