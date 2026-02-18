@@ -26,7 +26,7 @@ const HeaderMenu = () => {
             </li>
             <li>
               <a
-                href="https://drive.google.com/file/d/1kSuGCVFkieMQPlqMEWeIijz1Pqa1g5GJ/view?usp=sharing"
+                href="https://drive.google.com/file/d/1pYeHOzLHV0a9x0n0-TFUFFNjJqH6eJVY/view?usp=drive_link"
                 target="_blank"
                 rel="noreferrer noopener"
                 className="dez-page"
