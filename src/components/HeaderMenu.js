@@ -99,7 +99,7 @@ const HeaderMenu = () => {
             </li>
           </ul>
         </li>
-        <li>
+        {/* <li>
           <Link href="#">
             Sertifikat<i className="fa fa-chevron-down"></i>{" "}
           </Link>
@@ -115,7 +115,7 @@ const HeaderMenu = () => {
               </a>
             </li>
           </ul>
-        </li>
+        </li> */}
         <li>
           <Link href="/Faq" rel="noreferrer noopener" className="dez-page">
             FAQ

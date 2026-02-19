@@ -24,6 +24,15 @@ const offline2026 = () => {
             </div>
             <div className=" wrapper-btn text-center">
               <a
+                href="https://drive.google.com/file/d/1XAgja897xhkHdLtIqkLErFG56KQE80qq/view?usp=drive_link"
+                target="_blank"
+                className="btn btn-primary site-button m-3"
+                style={{ fontSize: "22px", fontWeight: "bold" }}
+              >
+                {" "}
+                Universitas {" "}
+              </a>
+              <a
                 href="https://drive.google.com/file/d/1cc6c3ufA1YzOTjGBI3ACtGS6rghAFH47/view?usp=sharing"
                 target="_blank"
                 className="btn btn-primary site-button m-3"
@@ -33,7 +42,7 @@ const offline2026 = () => {
                 Sekolah Menengah Atas (SMA){" "}
               </a>
               <a
-                href="https://drive.google.com/file/d/1VAvaxtn9ZXLA-gn4dr5W2gh7CB7LQqXf/view?usp=sharing"
+                href="https://drive.google.com/file/d/1vXCGhNkI-4zr3nNLUTch1i-v9jjEUJGs/view?usp=drive_link"
                 target="_blank"
                 className="btn btn-primary site-button m-3"
                 style={{ fontSize: "22px", fontWeight: "bold" }}
@@ -42,7 +51,7 @@ const offline2026 = () => {
                 Sekolah Menengah Pertama (SMP){" "}
               </a>
               <a
-                href="https://drive.google.com/file/d/1_EhHrz6poZEX0VfH9pwgQGoCitlViyjf/view?usp=sharing"
+                href="https://drive.google.com/file/d/17Tm0dXcMRH2UqoaSlpEHo8EibrgwexC4/view?usp=drive_link"
                 target="_blank"
                 className="btn btn-primary site-button m-3"
                 style={{ fontSize: "22px", fontWeight: "bold" }}

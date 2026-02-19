@@ -39,7 +39,7 @@ const kategori = () => {
                 Special Award{" "}
               </a>
             </Link> */}
-            {/* <Link href="/LoW/2026/offline2026" legacyBehavior>
+            <Link href="/LoW/2026/offline2026" legacyBehavior>
               <a
                 className="btn btn-primary site-button m-3"
                 style={{ fontSize: "22px", fontWeight: "bold" }}
@@ -47,7 +47,7 @@ const kategori = () => {
                 {" "}
                 NISEEF OFFLINE{" "}
               </a>
-            </Link> */}
+            </Link>
             <Link href="/LoW/2026/online2026" legacyBehavior>
               <a
                 className="btn btn-primary site-button m-3"
