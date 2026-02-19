@@ -45,12 +45,22 @@ const HeaderMenu = () => {
           <ul className="sub-menu left">
             <li>
               <a
+                href="https://drive.google.com/drive/folders/1yX83760Um6NBqgkqUv2A1uzBfcz9wlGr?usp=sharing"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="dez-page"
+              >
+                Sertif Supervisor OFFLINE 2026
+              </a>
+            </li>
+            <li>
+              <a
                 href="https://drive.google.com/drive/folders/1VhhNuXP85KB7frtZCM8-JBoWBuTm2Kh0?usp=sharing"
                 target="_blank"
                 rel="noreferrer noopener"
                 className="dez-page"
               >
-                Sertifikat Supervisor 2026
+                Sertif Supervisor ONLINE 2026
               </a>
             </li>
             <li>
@@ -60,7 +70,7 @@ const HeaderMenu = () => {
                 rel="noreferrer noopener"
                 className="dez-page"
               >
-                Sertifikat Supervisor 2025
+                Sertif Supervisor ONLINE 2025
               </a>
             </li>
           </ul>
