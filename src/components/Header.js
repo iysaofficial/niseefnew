@@ -126,7 +126,7 @@ const Header = () => {
               <div className="logo-header mostion d-md-block d-lg-none">
                 <Link href="/" className="dez-page">
                   <Image
-                    src="/assets/images/new-aisef.png"
+                    src="/assets/images/NISEEF.png"
                     width={100}
                     height={100}
                     alt=""

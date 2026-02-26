@@ -82,6 +82,16 @@ const HeaderMenu = () => {
           <ul className="sub-menu left">
             <li>
               <a
+                href="https://drive.google.com/drive/folders/18R7_exWnwtYawe31efdpPZnKyi-P9PRT?usp=sharing"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="dez-page"
+              >
+                Kurasi 2026
+              </a>
+            </li>
+            <li>
+              <a
                 href="https://drive.google.com/drive/folders/1uQlDcr7_2sWDcj2Paa81ypdVa2WPEB57?usp=sharing"
                 target="_blank"
                 rel="noreferrer noopener"
