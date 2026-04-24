@@ -31,6 +31,16 @@ const HeaderMenu = () => {
                 rel="noreferrer noopener"
                 className="dez-page"
               >
+                Pesan Siaran 2026
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/file/d/1pYeHOzLHV0a9x0n0-TFUFFNjJqH6eJVY/view?usp=drive_link"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="dez-page"
+              >
                 Pesan Siaran 2025
               </a>
             </li>
