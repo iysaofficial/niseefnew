@@ -33,7 +33,7 @@ const offline2026 = () => {
                 Universitas {" "}
               </a>
               <a
-                href="https://drive.google.com/file/d/1cc6c3ufA1YzOTjGBI3ACtGS6rghAFH47/view?usp=sharing"
+                href="https://drive.google.com/file/d/1vXCGhNkI-4zr3nNLUTch1i-v9jjEUJGs/view?usp=drive_link"
                 target="_blank"
                 className="btn btn-primary site-button m-3"
                 style={{ fontSize: "22px", fontWeight: "bold" }}
@@ -42,7 +42,7 @@ const offline2026 = () => {
                 Sekolah Menengah Atas (SMA){" "}
               </a>
               <a
-                href="https://drive.google.com/file/d/1vXCGhNkI-4zr3nNLUTch1i-v9jjEUJGs/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1Bwb-fZq63qI6dCTLSllRF2A0EjYPO56w/view?usp=drive_link"
                 target="_blank"
                 className="btn btn-primary site-button m-3"
                 style={{ fontSize: "22px", fontWeight: "bold" }}
