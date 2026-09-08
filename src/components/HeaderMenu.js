@@ -14,7 +14,7 @@ const HeaderMenu = () => {
         </li>
         <li>
           <Link href="#">
-            Guidebook <i className="fa fa-chevron-down"></i>{" "}
+            Buku Panduan <i className="fa fa-chevron-down"></i>{" "}
           </Link>
           <ul className="sub-menu left">
             <li>
@@ -24,7 +24,7 @@ const HeaderMenu = () => {
                 rel="noreferrer noopener"
                 className="dez-page"
               >
-                Guidebook 2026
+                Buku Panduan 2026
               </a>
             </li>
             <li>
@@ -34,7 +34,7 @@ const HeaderMenu = () => {
                 rel="noreferrer noopener"
                 className="dez-page"
               >
-                Guidebook 2025
+                Buku Panduan 2025
               </a>
             </li>
           </ul>

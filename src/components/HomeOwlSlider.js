@@ -115,7 +115,7 @@ const HomeOwlSlider = () => {
                   rel="noreferrer noopener"
                   className="site-button m-r10 white button-lg"
                 >
-                  Tutup Pendaftaran
+                  Segera Hadir pada Tahun 2027
                 </a>
               </Link>
             </div>
@@ -165,7 +165,7 @@ const HomeOwlSlider = () => {
                   rel="noreferrer noopener"
                   className="site-button m-r10 white button-lg"
                 >
-                  Tutup Pendaftaran
+                  Segera Hadir pada Tahun 2027
                 </a>
               </Link>
             </div>
@@ -185,7 +185,7 @@ const HomeOwlSlider = () => {
               </h2>
 
               <h2 className="text-white font-weight-400">
-                <a>Tutup Pendaftaran 2026</a>
+                <a>Segera Hadir pada Tahun 2027</a>
                 <br />
               </h2>
               <a
