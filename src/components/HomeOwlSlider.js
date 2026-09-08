@@ -78,14 +78,14 @@ const HomeOwlSlider = () => {
 
         <div className="slide-content overlay-primary">
           <div className="slide-content-box container">
-            <div className="max-w600 text-white">
+            <div className="text-white">
               <h2 className="text-white font-weight-400">
                 NATIONAL INNOVATIVE SCIENCE ENVIRONMENTAL AND ENTREPRENEUR FAIR
                 <br />
               </h2>
 
               <h2 className="text-white font-weight-400">
-                <a>Tutup Pendaftaran 2026</a>
+                <a>Segera Hadir pada Tahun 2027</a>
                 <br />
               </h2>
 
@@ -128,7 +128,7 @@ const HomeOwlSlider = () => {
         </div>
         <div className="slide-content overlay-primary">
           <div className="slide-content-box container">
-            <div className=" text-white">
+            <div className="text-white">
               <h2 className="text-white font-weight-400">
                 NATIONAL INNOVATIVE SCIENCE ENVIRONMENTAL AND ENTREPRENEUR FAIR
                 <br />
@@ -178,7 +178,7 @@ const HomeOwlSlider = () => {
         </div>
         <div className="slide-content overlay-primary">
           <div className="slide-content-box container">
-            <div className="max-w600 text-white">
+            <div className="text-white">
               <h2 className="text-white font-weight-400">
                 NATIONAL INNOVATIVE SCIENCE ENVIRONMENTAL AND ENTREPRENEUR FAIR
                 <br />
@@ -213,7 +213,7 @@ const HomeOwlSlider = () => {
                   rel="noreferrer noopener"
                   className="site-button m-r10 white button-lg"
                 >
-                  Tutup Pendaftaran
+                  Segera Hadir pada Tahun 2027
                 </a>
               </Link>
             </div>
