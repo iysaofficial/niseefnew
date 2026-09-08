@@ -14,6 +14,33 @@ const HeaderMenu = () => {
         </li>
         <li>
           <Link href="#">
+            Guidebook <i className="fa fa-chevron-down"></i>{" "}
+          </Link>
+          <ul className="sub-menu left">
+            <li>
+              <a
+                href="https://drive.google.com/file/d/1ZFzeL_3399SgfiQXX6zUY6_eGIYv1vIW/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="dez-page"
+              >
+                Guidebook 2026
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/file/d/1a8sTUM0plBNMsq8BkNGA00_MARh_r5Fi/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="dez-page"
+              >
+                Guidebook 2025
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <Link href="#">
             Liputan Media <i className="fa fa-chevron-down"></i>{" "}
           </Link>
           <ul className="sub-menu left">

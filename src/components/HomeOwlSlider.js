@@ -135,7 +135,7 @@ const HomeOwlSlider = () => {
               </h2>
 
               <h2 className="text-white font-weight-400">
-                <a>Tutup Pendaftaran 2026</a>
+                <a>Segera Hadir pada Tahun 2027</a>
                 <br />
               </h2>
 
