@@ -150,14 +150,16 @@ const HomeOwlSlider = ({ identitas = null, guidebook = null }) => {
                 <br />
               </h2>
 
-              <a
-                href="https://youtu.be/LAvjaf3Ztjs?si=ZPUlhiUxocfRRKlB"
-                rel="noreferrer noopener"
-                target="_blank"
-                className="site-button m-r10 white button-lg"
-              >
-                After Event
-              </a>
+              {/* Tombol "After Event" dihapus.
+
+                  Sorotan ini menyisakan tepat dua tombol, sama dengan GYIIF:
+                  satu menuju pendaftaran, satu menuju buku panduan — keduanya
+                  dibaca dari dasbor. Tautan video adalah satu-satunya yang
+                  tersisa yang dipaku di kode, dan ia tidak punya hubungan
+                  dengan apa pun yang dasbor ketahui, jadi ia cuma menambah
+                  satu hal lagi yang harus diingat orang saat edisi berganti.
+
+                  Videonya tetap ada di menu Media. */}
 
               {/* Buku Panduan muncul hanya kalau panitia sudah
                   menerbitkannya dari dasbor. Tautannya dulu dipaku ke satu
@@ -205,14 +207,6 @@ const HomeOwlSlider = ({ identitas = null, guidebook = null }) => {
                 <br />
               </h2>
 
-              <a
-                href="https://youtu.be/xA5kvu-72RU?si=K0pRjFolVOR4-aT5"
-                rel="noreferrer noopener"
-                target="_blank"
-                className="site-button m-r10 white button-lg"
-              >
-                After Event
-              </a>
 
               {/* Buku Panduan muncul hanya kalau panitia sudah
                   menerbitkannya dari dasbor. Tautannya dulu dipaku ke satu
@@ -259,14 +253,6 @@ const HomeOwlSlider = ({ identitas = null, guidebook = null }) => {
                 <a>{buka ? `Pendaftaran ${tahun} Dibuka` : `Segera Hadir pada Tahun ${tahun}`}</a>
                 <br />
               </h2>
-              <a
-                href="https://youtu.be/xA5kvu-72RU?si=K0pRjFolVOR4-aT5"
-                rel="noreferrer noopener"
-                target="_blank"
-                className="site-button m-r10 white button-lg"
-              >
-                After Event
-              </a>
               {/* Buku Panduan muncul hanya kalau panitia sudah
                   menerbitkannya dari dasbor. Tautannya dulu dipaku ke satu
                   berkas Google Drive dan dikomentari begitu edisinya lewat —
