@@ -64,27 +64,22 @@ function HomeIndo() {
               </h3>
             </div>
           </div>
+          {/*
+            Dua tombol bertuliskan "TUTUP" yang keduanya menunjuk ke halaman
+            ini sendiri diganti satu tautan ke halaman pendaftaran.
+
+            Tombol mati yang tetap terlihat seperti tombol akan diklik
+            berulang oleh orang yang mengira halamannya rusak — dan di sini
+            keduanya memang membawa kembali ke halaman yang sama, jadi yang
+            terjadi persis itu. Buka-tutupnya sekarang dibaca dari dasbor di
+            halaman tujuan, bukan dipaku di sini.
+          */}
           <div className="link-web mx-auto text-center">
-            <a
-              className="btn btn-custom text-center me-lg-5 "
-              onClick={() =>
-                handleOpenModal(
-                  "/registration/homeindo"
-                )
-              }
-            >
-              TUTUP<i className="fa-solid fa-earth-americas"></i>
-            </a>
-            <a
-              className="btn btn-custom text-center me-lg-5 "
-              onClick={() =>
-                handleOpenModal(
-                  "/registration/homeindo"
-                )
-              }
-            >
-              TUTUP<i className="fa-solid fa-earth-americas"></i>
-            </a>
+            <Link href="/registration/homeregist" legacyBehavior>
+              <a className="btn btn-custom text-center me-lg-5">
+                BUKA FORMULIR PENDAFTARAN
+              </a>
+            </Link>
           </div>
           {/* <div className="link-web mx-auto text-center">
             <a
