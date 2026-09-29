@@ -9,14 +9,14 @@ import Carousel from "@/components/Carousel";
 import Categories from "@/components/Categories";
 import ImgCarouselContent from "@/components/ImgCarouselContent";
 import HomeOwlSlider from "@/components/HomeOwlSlider";
-import { ambilIdentitas } from "@/lib/dashboardApi";
+import { ambilIdentitas, ambilGuidebook } from "@/lib/dashboardApi";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const pic4 = "/assets/images/main/img.jpg";
 const bgimg2 = "/assets/images/background/bg-map.jpg";
 
-export default function Home({ identitas }) {
+export default function Home({ identitas, guidebook }) {
   return (
     <>
       <Head>
@@ -30,7 +30,7 @@ export default function Home({ identitas }) {
         <div className="page-content bg-white">
           {/*  Slider Banner */}
           <div className="owl-slider-banner main-slider">
-            <HomeOwlSlider identitas={identitas} />
+            <HomeOwlSlider identitas={identitas} guidebook={guidebook} />
           </div>
           {/*  Slider Banner */}
           <div className="content-block">
@@ -194,8 +194,10 @@ export default function Home({ identitas }) {
  * supaya tidak ada yang perlu menunggu jendela itu lewat.
  */
 export async function getStaticProps() {
+  /* Keduanya diambil berbarengan — yang satu tidak bergantung hasil yang lain. */
+  const [identitas, guidebook] = await Promise.all([ambilIdentitas(), ambilGuidebook()]);
   return {
-    props: { identitas: await ambilIdentitas() },
+    props: { identitas, guidebook },
     revalidate: 60,
   };
 }
