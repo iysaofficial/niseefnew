@@ -1,8 +1,9 @@
 // pages/index.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 import Link from "next/link";
+import { keadaanPendaftaran } from "@/lib/registrasi";
 
 // Pastikan CSS dari slick-carousel diimpor dengan benar
 import "slick-carousel/slick/slick.css";
@@ -35,7 +36,59 @@ function SamplePrevArrow(props) {
   );
 }
 
-const HomeOwlSlider = () => {
+
+/**
+ * Sorotan halaman depan.
+ *
+ * ── Kenapa tulisannya tidak lagi dipaku ───────────────────────────────────
+ *
+ * Sebelumnya di sini tertulis "Segera Hadir pada Tahun 2027" dan tombolnya ber-`href=""` —
+ * menekannya tidak membawa ke mana pun. Keduanya harus disunting programmer
+ * tiap kali pendaftaran dibuka, dan itulah kenapa halaman depan masih berkata
+ * begitu berbulan-bulan setelah edisinya disiapkan di dasbor.
+ *
+ * Sekarang keadaannya datang dari `identitas` yang ditarik halamannya dari
+ * API dasbor, dan tombolnya menunjuk ke halaman pendaftaran yang sebenarnya.
+ * Yang perlu dilakukan saat pendaftaran dibuka cuma menyalakan togelnya di
+ * dasbor — tidak ada satu baris pun di repo ini yang perlu disunting.
+ *
+ * Bawaannya tetap "belum dibuka" saat API tidak menjawab: situs yang diam
+ * lebih baik daripada situs yang mengundang orang mendaftar ke pintu yang
+ * belum tentu terbuka.
+ *
+ * ── Kenapa keadaannya ditarik LAGI di peramban ────────────────────────────
+ *
+ * Halaman ini statis dengan `revalidate`, jadi togel yang baru ditekan di
+ * dasbor baru terlihat setelah jendela itu lewat DAN ada yang memicu
+ * pembangunan ulangnya — praktisnya beberapa menit, tanpa satu pun tanda
+ * bahwa sesuatu sedang terjadi. Sekali pengambilan saat halaman terbuka
+ * membuat pengunjung berikutnya selalu melihat keadaan sekarang.
+ *
+ * Tombol Buku Panduan sengaja TIDAK ikut diubah: tautannya yang sekarang
+ * bekerja, sementara guidebook edisi ini belum diterbitkan dari dasbor.
+ * Menggantinya berarti menghilangkan tombol yang berfungsi.
+ */
+const HomeOwlSlider = ({ identitas = null }) => {
+  const [identitasKini, setIdentitasKini] = useState(identitas);
+
+  useEffect(() => {
+    let hidup = true;
+    (async () => {
+      try {
+        const { ambilIdentitas } = await import("@/lib/dashboardApi");
+        const id = await ambilIdentitas({ cache: "no-store" });
+        if (hidup && id) setIdentitasKini(id);
+      } catch {
+        /* Gagal mengambil berarti tetap memakai nilai dari pembangunan
+           halaman — bukan tombol yang hilang. */
+      }
+    })();
+    return () => { hidup = false; };
+  }, []);
+
+  const buka = keadaanPendaftaran(identitasKini) === "buka";
+  const tahun = identitasKini?.tahun ?? "2027";
+
   const settings = {
     arrows: true,
     dots: true,
@@ -85,7 +138,7 @@ const HomeOwlSlider = () => {
               </h2>
 
               <h2 className="text-white font-weight-400">
-                <a>Segera Hadir pada Tahun 2027</a>
+                <a>{buka ? `Pendaftaran ${tahun} Dibuka` : `Segera Hadir pada Tahun ${tahun}`}</a>
                 <br />
               </h2>
 
@@ -110,12 +163,11 @@ const HomeOwlSlider = () => {
                   Buku Panduan
                 </a>
               </Link>
-              <Link href="" legacyBehavior>
-                <a
-                  rel="noreferrer noopener"
-                  className="site-button m-r10 white button-lg"
-                >
-                  Segera Hadir pada Tahun 2027
+              <Link href="/registration/homeregist" legacyBehavior>
+                <a className="site-button m-r10 white button-lg">
+                  {buka
+                    ? `Daftar Sekarang ${tahun}`
+                    : `Segera Hadir pada Tahun ${tahun}`}
                 </a>
               </Link>
             </div>
@@ -135,7 +187,7 @@ const HomeOwlSlider = () => {
               </h2>
 
               <h2 className="text-white font-weight-400">
-                <a>Segera Hadir pada Tahun 2027</a>
+                <a>{buka ? `Pendaftaran ${tahun} Dibuka` : `Segera Hadir pada Tahun ${tahun}`}</a>
                 <br />
               </h2>
 
@@ -160,12 +212,11 @@ const HomeOwlSlider = () => {
                   Buku Panduan
                 </a>
               </Link>
-              <Link href="" legacyBehavior>
-                <a
-                  rel="noreferrer noopener"
-                  className="site-button m-r10 white button-lg"
-                >
-                  Segera Hadir pada Tahun 2027
+              <Link href="/registration/homeregist" legacyBehavior>
+                <a className="site-button m-r10 white button-lg">
+                  {buka
+                    ? `Daftar Sekarang ${tahun}`
+                    : `Segera Hadir pada Tahun ${tahun}`}
                 </a>
               </Link>
             </div>
@@ -185,7 +236,7 @@ const HomeOwlSlider = () => {
               </h2>
 
               <h2 className="text-white font-weight-400">
-                <a>Segera Hadir pada Tahun 2027</a>
+                <a>{buka ? `Pendaftaran ${tahun} Dibuka` : `Segera Hadir pada Tahun ${tahun}`}</a>
                 <br />
               </h2>
               <a
@@ -208,12 +259,11 @@ const HomeOwlSlider = () => {
                   Buku Panduan
                 </a>
               </Link>
-              <Link href="" legacyBehavior>
-                <a
-                  rel="noreferrer noopener"
-                  className="site-button m-r10 white button-lg"
-                >
-                  Segera Hadir pada Tahun 2027
+              <Link href="/registration/homeregist" legacyBehavior>
+                <a className="site-button m-r10 white button-lg">
+                  {buka
+                    ? `Daftar Sekarang ${tahun}`
+                    : `Segera Hadir pada Tahun ${tahun}`}
                 </a>
               </Link>
             </div>
