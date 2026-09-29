@@ -1,8 +1,9 @@
 // pages/index.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 import Link from "next/link";
+import { keadaanPendaftaran } from "@/lib/registrasi";
 
 // Pastikan CSS dari slick-carousel diimpor dengan benar
 import "slick-carousel/slick/slick.css";
@@ -35,7 +36,67 @@ function SamplePrevArrow(props) {
   );
 }
 
-const HomeOwlSlider = () => {
+
+/**
+ * Sorotan halaman depan.
+ *
+ * ── Kenapa tulisannya tidak lagi dipaku ───────────────────────────────────
+ *
+ * Sebelumnya di sini tertulis "Segera Hadir pada Tahun 2027" dan tombolnya ber-`href=""` —
+ * menekannya tidak membawa ke mana pun. Keduanya harus disunting programmer
+ * tiap kali pendaftaran dibuka, dan itulah kenapa halaman depan masih berkata
+ * begitu berbulan-bulan setelah edisinya disiapkan di dasbor.
+ *
+ * Sekarang keadaannya datang dari `identitas` yang ditarik halamannya dari
+ * API dasbor, dan tombolnya menunjuk ke halaman pendaftaran yang sebenarnya.
+ * Yang perlu dilakukan saat pendaftaran dibuka cuma menyalakan togelnya di
+ * dasbor — tidak ada satu baris pun di repo ini yang perlu disunting.
+ *
+ * Bawaannya tetap "belum dibuka" saat API tidak menjawab: situs yang diam
+ * lebih baik daripada situs yang mengundang orang mendaftar ke pintu yang
+ * belum tentu terbuka.
+ *
+ * ── Kenapa keadaannya ditarik LAGI di peramban ────────────────────────────
+ *
+ * Halaman ini statis dengan `revalidate`, jadi togel yang baru ditekan di
+ * dasbor baru terlihat setelah jendela itu lewat DAN ada yang memicu
+ * pembangunan ulangnya — praktisnya beberapa menit, tanpa satu pun tanda
+ * bahwa sesuatu sedang terjadi. Sekali pengambilan saat halaman terbuka
+ * membuat pengunjung berikutnya selalu melihat keadaan sekarang.
+ *
+ * Tombol Buku Panduan sengaja TIDAK ikut diubah: tautannya yang sekarang
+ * bekerja, sementara guidebook edisi ini belum diterbitkan dari dasbor.
+ * Menggantinya berarti menghilangkan tombol yang berfungsi.
+ */
+const HomeOwlSlider = ({ identitas = null, guidebook = null }) => {
+  const [identitasKini, setIdentitasKini] = useState(identitas);
+  const [panduan, setPanduan] = useState(guidebook);
+
+  useEffect(() => {
+    let hidup = true;
+    (async () => {
+      try {
+        const { ambilIdentitas, ambilGuidebook } = await import("@/lib/dashboardApi");
+        /* Berbarengan — dua panggilan berurutan menambah tunggu tanpa alasan,
+           dan yang satu tidak bergantung hasil yang lain. */
+        const [id, gb] = await Promise.all([
+          ambilIdentitas({ cache: "no-store" }),
+          ambilGuidebook({ cache: "no-store" }),
+        ]);
+        if (!hidup) return;
+        if (id) setIdentitasKini(id);
+        setPanduan(gb ?? null);
+      } catch {
+        /* Gagal mengambil berarti tetap memakai nilai dari pembangunan
+           halaman — bukan tombol yang hilang. */
+      }
+    })();
+    return () => { hidup = false; };
+  }, []);
+
+  const buka = keadaanPendaftaran(identitasKini) === "buka";
+  const tahun = identitasKini?.tahun ?? "2027";
+
   const settings = {
     arrows: true,
     dots: true,
@@ -85,7 +146,7 @@ const HomeOwlSlider = () => {
               </h2>
 
               <h2 className="text-white font-weight-400">
-                <a>Segera Hadir pada Tahun 2027</a>
+                <a>{buka ? `Pendaftaran ${tahun} Dibuka` : `Segera Hadir pada Tahun ${tahun}`}</a>
                 <br />
               </h2>
 
@@ -98,24 +159,29 @@ const HomeOwlSlider = () => {
                 After Event
               </a>
 
-              <Link
-                href="https://drive.google.com/file/d/1eKYOd78oLRl1KePy2l_hcaWKtv7Ha0R6/view?usp=sharing"
-                legacyBehavior
-              >
+              {/* Buku Panduan muncul hanya kalau panitia sudah
+                  menerbitkannya dari dasbor. Tautannya dulu dipaku ke satu
+                  berkas Google Drive dan dikomentari begitu edisinya lewat —
+                  jadi ia selalu tertinggal satu edisi, dan menghidupkannya
+                  kembali menuntut programmer. Persis pola yang sudah
+                  dibereskan untuk tulisan "Segera Hadir" di atas.
+
+                  Belum terbit berarti tombolnya TIDAK ADA, bukan mati. */}
+              {panduan?.url && (
                 <a
+                  href={panduan.url}
                   rel="noreferrer noopener"
                   target="_blank"
                   className="site-button m-r10 white button-lg"
                 >
                   Buku Panduan
                 </a>
-              </Link>
-              <Link href="" legacyBehavior>
-                <a
-                  rel="noreferrer noopener"
-                  className="site-button m-r10 white button-lg"
-                >
-                  Segera Hadir pada Tahun 2027
+              )}
+              <Link href="/registration/homeregist" legacyBehavior>
+                <a className="site-button m-r10 white button-lg">
+                  {buka
+                    ? `Daftar Sekarang ${tahun}`
+                    : `Segera Hadir pada Tahun ${tahun}`}
                 </a>
               </Link>
             </div>
@@ -135,7 +201,7 @@ const HomeOwlSlider = () => {
               </h2>
 
               <h2 className="text-white font-weight-400">
-                <a>Segera Hadir pada Tahun 2027</a>
+                <a>{buka ? `Pendaftaran ${tahun} Dibuka` : `Segera Hadir pada Tahun ${tahun}`}</a>
                 <br />
               </h2>
 
@@ -148,24 +214,29 @@ const HomeOwlSlider = () => {
                 After Event
               </a>
 
-              <Link
-                href="https://drive.google.com/file/d/1eKYOd78oLRl1KePy2l_hcaWKtv7Ha0R6/view?usp=sharing"
-                legacyBehavior
-              >
+              {/* Buku Panduan muncul hanya kalau panitia sudah
+                  menerbitkannya dari dasbor. Tautannya dulu dipaku ke satu
+                  berkas Google Drive dan dikomentari begitu edisinya lewat —
+                  jadi ia selalu tertinggal satu edisi, dan menghidupkannya
+                  kembali menuntut programmer. Persis pola yang sudah
+                  dibereskan untuk tulisan "Segera Hadir" di atas.
+
+                  Belum terbit berarti tombolnya TIDAK ADA, bukan mati. */}
+              {panduan?.url && (
                 <a
+                  href={panduan.url}
                   rel="noreferrer noopener"
                   target="_blank"
                   className="site-button m-r10 white button-lg"
                 >
                   Buku Panduan
                 </a>
-              </Link>
-              <Link href="" legacyBehavior>
-                <a
-                  rel="noreferrer noopener"
-                  className="site-button m-r10 white button-lg"
-                >
-                  Segera Hadir pada Tahun 2027
+              )}
+              <Link href="/registration/homeregist" legacyBehavior>
+                <a className="site-button m-r10 white button-lg">
+                  {buka
+                    ? `Daftar Sekarang ${tahun}`
+                    : `Segera Hadir pada Tahun ${tahun}`}
                 </a>
               </Link>
             </div>
@@ -185,7 +256,7 @@ const HomeOwlSlider = () => {
               </h2>
 
               <h2 className="text-white font-weight-400">
-                <a>Segera Hadir pada Tahun 2027</a>
+                <a>{buka ? `Pendaftaran ${tahun} Dibuka` : `Segera Hadir pada Tahun ${tahun}`}</a>
                 <br />
               </h2>
               <a
@@ -196,24 +267,29 @@ const HomeOwlSlider = () => {
               >
                 After Event
               </a>
-              <Link
-                href="https://drive.google.com/file/d/1eKYOd78oLRl1KePy2l_hcaWKtv7Ha0R6/view?usp=sharing"
-                legacyBehavior
-              >
+              {/* Buku Panduan muncul hanya kalau panitia sudah
+                  menerbitkannya dari dasbor. Tautannya dulu dipaku ke satu
+                  berkas Google Drive dan dikomentari begitu edisinya lewat —
+                  jadi ia selalu tertinggal satu edisi, dan menghidupkannya
+                  kembali menuntut programmer. Persis pola yang sudah
+                  dibereskan untuk tulisan "Segera Hadir" di atas.
+
+                  Belum terbit berarti tombolnya TIDAK ADA, bukan mati. */}
+              {panduan?.url && (
                 <a
+                  href={panduan.url}
                   rel="noreferrer noopener"
                   target="_blank"
                   className="site-button m-r10 white button-lg"
                 >
                   Buku Panduan
                 </a>
-              </Link>
-              <Link href="" legacyBehavior>
-                <a
-                  rel="noreferrer noopener"
-                  className="site-button m-r10 white button-lg"
-                >
-                  Segera Hadir pada Tahun 2027
+              )}
+              <Link href="/registration/homeregist" legacyBehavior>
+                <a className="site-button m-r10 white button-lg">
+                  {buka
+                    ? `Daftar Sekarang ${tahun}`
+                    : `Segera Hadir pada Tahun ${tahun}`}
                 </a>
               </Link>
             </div>
