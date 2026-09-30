@@ -5,7 +5,7 @@ import Link from "next/link";
 import Navigation from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ambilIdentitas } from "@/lib/dashboardApi";
-import { keadaanPendaftaran, tanggalPanjang } from "@/lib/registrasi";
+import { keadaanPendaftaran } from "@/lib/registrasi";
 
 /**
  * Pintu masuk pendaftaran.
@@ -19,7 +19,12 @@ import { keadaanPendaftaran, tanggalPanjang } from "@/lib/registrasi";
  * tertinggal, karena yang mengingatnya harus orang dan yang mengubahnya harus
  * programmer.
  *
- * Sekarang tahun, tanggal, dan buka-tutupnya datang dari togel di dasbor.
+ * Rentang tanggal pendaftaran SENGAJA tidak ditampilkan di halaman ini.
+ * Keputusan panitia, disampaikan dua kali — saat GYIIF dan lagi saat AISEEF
+ * 2027 — dan yang mengembalikannya akan mengulang hal yang sama. Judulnya
+ * sudah menyatakan pendaftaran dibuka atau belum; tanggalnya ada di guidebook.
+ *
+ * Sekarang tahun dan keadaan buka-tutupnya datang dari togel di dasbor.
  * Tidak ada lagi yang perlu disunting di sini saat pendaftaran dibuka atau
  * ditutup.
  *
@@ -63,8 +68,6 @@ function HomeRegist({ identitas, keadaanAwal }) {
 
   const tahun = identitas?.tahun ?? "";
   const judul = `${identitas?.akronim ?? "NISEEF"} ${tahun}`.trim();
-  const buka = tanggalPanjang(identitas?.pendaftaran_buka);
-  const tutup = tanggalPanjang(identitas?.pendaftaran_tutup);
 
   return (
     <>
@@ -101,18 +104,6 @@ function HomeRegist({ identitas, keadaanAwal }) {
                   : `Pendaftaran ${judul}`}
               </h3>
 
-              {/* Tanggalnya disebut apa pun keadaannya. Yang datang terlalu
-                  awal perlu tahu kapan harus kembali; yang terlambat perlu
-                  tahu bahwa ia memang terlambat, bukan tersesat. */}
-              {(buka || tutup) && (
-                <p className="mx-auto mb-4 text-sm md:text-base">
-                  {buka && tutup
-                    ? `${buka} — ${tutup}`
-                    : buka
-                    ? `Dibuka ${buka}`
-                    : `Ditutup ${tutup}`}
-                </p>
-              )}
             </div>
           </div>
 
