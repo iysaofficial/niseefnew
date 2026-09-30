@@ -136,9 +136,23 @@ text-transform: lowercase !important;
 
 /* HOMEREGIST START */
 /* HOMEREGIST START */
+/*
+  Tinggi section: MINIMUM satu layar, bukan tepat satu layar.
+
+  `height: 100vh` memaku tingginya, dan `align-items: center` memusatkan isinya
+  di dalam kotak sekaku itu. Selama isinya cuma dua tombol, keduanya terlihat
+  benar. Begitu halaman ini memuat formulir pendaftaran sisipan — yang
+  tingginya beberapa layar — isinya meluap KE DUA ARAH sekaligus: judul bagian
+  tertimpa header di atas, dan kartu formulirnya menjorok ke bawah menutupi
+  footer. Keduanya terlihat di produksi, bukan diduga.
+
+  `min-height` membuat section tumbuh mengikuti isinya. Isi yang pendek tetap
+  terpusat seperti dulu, karena tinggi kotaknya lalu pas dengan isinya dan
+  `align-items: center` tidak berpengaruh apa-apa.
+*/
 .homeregist-section {
-  /* padding: 75px 25px 75px 25px  ; */
-  height: 100vh;
+  padding: 75px 25px 75px 25px  ;
+  min-height: 100vh;
   background: var(--warna-tulisan2);
   display: flex;
   justify-content: center;
